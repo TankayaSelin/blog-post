@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+p {
+  margin: 0 !important;
+}
+
+input {
+  width: 100%;
+}
+
+.borderBottom {
+  border-bottom: 1px solid lightgrey;
+}
+
+.images {
+  max-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.lineClamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lineClamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.changeColor{
+  background-color: green;
+  color: #fff;
+}
+
+.alignments {
+  width: 80% !important;
+}
+
+.textOverflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .alignments {
+    width: 100% !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*HEADER*/
+
+.header-container {
+  border-bottom: 1px solid grey;
+}
+
+.logo #read,
+.logo #blog {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.logo #read {
+  color: #000;
+}
+
+.logo #blog {
+  color: green;
+}
+
+#logo-text {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: grey;
+}
+
+.navbar-links {
+  color: #000 !important;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar-links {
+    font-size: 8px;
+  }
+}
+
+/*E.O HEADER*/
+
+/*BANNER*/
+.banner-container {
+  height: 120px;
+  position: relative;
+}
+
+.banner-container img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-contents {
+  /* left: 4em; */
+}
+
+/*E.O BANNER*/
+
+/*BODY*/
+.body-container {
+  /* width: 70% !important; */
+}
+
+/*E.O BODY*/
+
+/*SEARCH-CONTAINER*/
+
+.search-container {
+  background: #f9f8fa;
+  height: 30px;
+  padding: 10px 10px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  cursor: pointer;
+  transition: 0.8s;
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 400px;
+  font-size: 14px;
+}
+
+.search-container .search-btn .fas {
+  color: #5cbdbb;
+}
+
+@media screen and (max-width: 768px) {
+  .search-container .search-input {
+    width: 100%;
+  }
+}
+
+/*E.O SEARCH-CONTAINER*/
+
+
+/*CATEGORY*/
+.category-name {
+  font-weight: 400;
+}
+
+.category-number {
+  color: lightgray;
+}
+
+.category-name,
+.category-number {
+  font-size: 14px;
+}
+
+.category-title {
+  position: relative;
+  z-index: 1;
+}
+
+.category-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 20%; /* or 100px */
+  border-bottom: 1px solid #000;
+}
+
+/*E.O CATEGORY*/
+
+
+
+/*PAGINATION*/
+.paginationButtons {
+  width: 80%;
+  height: 40%;
+  list-style: none;
+  display: flex;
+}
+
+.paginationButtons a {
+  margin: 8px;
+  border-radius: 5px;
+  color: #2b2eff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/*E.O PAGINATION*/
+
+
+/*SEARCH-BOX*/
+.search-box {
+  position: absolute;
+  top: 40%;
+  right: 0;
+}
+
+#searchForm {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  width: 50px;
+  height: 30px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+#searchInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+  background-color: #f1f2f4;
+}
+
+.fa {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+#searchForm:hover {
+  width: 160px;
+  cursor: pointer;
+}
+
+#searchForm:hover #searchInput {
+  display: block;
+}
+
+#searchForm:hover .fa {
+  background: #07051a;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*E.O SEARCH-BOX*/
